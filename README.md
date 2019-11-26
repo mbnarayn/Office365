@@ -1,15 +1,12 @@
-# Connecting to PsGallery Repository via a Corporate Proxy
+# Connecting to the PsGallery Repository via a Corporate Proxy
 When running Get-PsRepository behind a corporate proxy you may get the error below  
 
 WARNING: Unable to find module repositories.
 
 To resolve this open PowerShell in elevated mode and run the following:
-
-
 ```
 notepad $PROFILE
 ```
-
 This will start notepad and open your PowerShell profile. If the file doesn’t exist, Notepad will prompt you to create it.
 
 Add these lines to the profile script:
@@ -30,6 +27,20 @@ Install-Module -Name AzureAD
 ### Install Microsoft Azure Active Directory Module for Windows PowerShell
 ```PowerShell
 Install-Module MSOnline
+```
+# User Administration via PowerShell
+#### Gets users from Azure Active Directory.
+```
+Get-MsolUser
+```
+#### View details about the Office 365 services that are available in all of your license plans
+```
+Get-MsolAccountSku | Select -ExpandProperty ServiceStatus
+```
+#### View details about the Office 365 services that are assigned to a particular user.
+Replace user@domain.com with the User Principal Name.
+```
+(Get-MsolUser -UserPrincipalName user@domain.com).Licenses.ServiceStatus
 ```
 
 
