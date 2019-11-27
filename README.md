@@ -92,12 +92,17 @@ Import-Csv -Path "C:\FolderName\InputFile.csv" | foreach {New-MsolUser -DisplayN
 ### Remove a user from Azure Active Directory
 -Force removes a user without confirmation
 ```
-Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -Force
+Remove-MsolUser -UserPrincipalName JoeBloggs@domain.co.uk -Force
 ```
 ### Remove a user from the Azure Active Directory Recycle Bin
 -Force removes a user from the Recycle Bin without confirmation
 ```
-Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -RemoveFromRecycleBin -Force
+Remove-MsolUser -UserPrincipalName JoeBloggs@domain.co.uk -RemoveFromRecycleBin -Force
+```
+### Change User Principal Name
+This cmdlet also changes the primary email address and adds the old UPN as an alias.
+```
+Set-MsolUserPrincipalName -UserPrincipalName currentname@domain.co.uk -NewUserPrincipalName newname@domain.co.uk
 ```
 # Administration of Exchange Online via PowerShell
 ### Connect to Exchange Online PowerShell via a Coporate Proxy
@@ -109,5 +114,12 @@ Then, add the following parameter and value to the end of the $Session = ... com
 ```
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection -SessionOption $ProxyOptions
 ```
-
+### Create a new distribution group with members
+```
+New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias london -PrimarySmtpAddress london@domain.co.uk -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
+```
+### Add a single member to an existing distribution group
+```
+ Add-DistributionGroupMember -Identity "london" -Member johndoe@domain.co.uk
+```
 
