@@ -75,5 +75,16 @@ The following example creates a new account for Joe Bloggs that assigns the lice
 ```
 New-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -DisplayName "Joe Bloggs" -FirstName Joe -LastName Bloggs -LicenseAssignment reseller-account:ENTERPRISEPACK -LicenseOptions $LO -UsageLocation GB
 ```
+### Remove a user from Azure Active Directory
+-Force removes a user without confirmation
+```
+Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -Force
+```
+### Remove a user from the Recycle Bin
+-Force removes a user from the Recycle Bin without confirmation
+```
+Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -RemoveFromRecycleBin -Force
+```
+
 
 
