@@ -99,7 +99,7 @@ Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -Force
 ```
 Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -RemoveFromRecycleBin -Force
 ```
-# Connect to Exchange Online PowerShell
+# Administration of Exchange Online via PowerShell
 ### Connect to Exchange Online PowerShell via a Coporate Proxy
 If you're behind a proxy server, run this command first: $ProxyOptions = New-PSSessionOption -ProxyAccessType <Value>, where the ProxyAccessType value is IEConfig, WinHttpConfig, or AutoDetect.
 ```
