@@ -105,7 +105,7 @@ This cmdlet also changes the primary email address and adds the old UPN as an al
 Set-MsolUserPrincipalName -UserPrincipalName currentname@domain.co.uk -NewUserPrincipalName newname@domain.co.uk
 ```
 # Administration of Exchange Online via PowerShell
-### Connect to Exchange Online PowerShell via a Coporate Proxy
+### Connect to Exchange Online PowerShell via a Corporate Proxy
 If you're behind a proxy server, run this command first: $ProxyOptions = New-PSSessionOption -ProxyAccessType <Value>, where the ProxyAccessType value is IEConfig, WinHttpConfig, or AutoDetect.
 ```
 $ProxyOptions = New-PSSessionOption -ProxyAccessType IEConfig
