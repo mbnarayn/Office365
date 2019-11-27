@@ -80,7 +80,7 @@ New-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -DisplayName "Joe Blo
 ```
 Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -Force
 ```
-### Remove a user from the Recycle Bin
+### Remove a user from the Azure Active Directory Recycle Bin
 -Force removes a user from the Recycle Bin without confirmation
 ```
 Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -RemoveFromRecycleBin -Force
