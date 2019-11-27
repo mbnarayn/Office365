@@ -120,9 +120,17 @@ New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias 
 ```
 ### Add a single member to an existing distribution group
 ```
- Add-DistributionGroupMember -Identity "london" -Member johndoe@domain.co.uk
+ Add-DistributionGroupMember -Identity "aliasname" -Member johndoe@domain.co.uk
 ```
 ### Replace all members in an existing distribution group
 ```
-Update-DistributionGroupMember -Identity "help" -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
+Update-DistributionGroupMember -Identity "aliasname" -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
+```
+### Remove a distribution group member without confirmation
+ ```
+Remove-DistributionGroupMember -Identity "aliasname" -member joebloggs@domain.co.uk -confirm:$false
+```
+### View the members of distribution groups and mail-enabled security groups
+```
+Get-DistributionGroupMember -Identity aliasname
 ```
