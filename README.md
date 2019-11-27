@@ -42,6 +42,13 @@ Get-MsolUser
 ```
 Get-MsolUser -UserPrincipalName user@domain.com | Format-List -Property *
 ```
+#### Other variations of the Get-MsolUser cmdlet
+```
+Get-MsolUser -UnlicensedUsersOnly
+```
+```
+Get-MsolUser | Select-Object DisplayName, Department, UsageLocation
+```
 ### Get all the SKUs and AccountSkuIds that the company owns
 ```
 Get-MsolAccountSku
