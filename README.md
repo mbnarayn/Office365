@@ -75,6 +75,20 @@ The following example creates a new account for Joe Bloggs that assigns the lice
 ```
 New-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -DisplayName "Joe Bloggs" -FirstName Joe -LastName Bloggs -LicenseAssignment reseller-account:ENTERPRISEPACK -LicenseOptions $LO -UsageLocation GB
 ```
+### Create multiple user accounts with license and disable services described in the previous section
+This example creates the user accounts from the file named C:\FolderName\InputFile.csv, and logs the results in the file named C:\FolderName\OutputFile.csv  
+
+Firstly, create a comma-separated value (CSV) file that contains the required user account information in the format below
+```
+UserPrincipalName,FirstName,LastName,DisplayName,UsageLocation,AccountSkuId
+ClaudeL@contoso.onmicrosoft.com,Claude,Loiselle,Claude Loiselle,US,contoso:ENTERPRISEPACK
+LynneB@contoso.onmicrosoft.com,Lynne,Baxter,Lynne Baxter,US,contoso:ENTERPRISEPACK
+ShawnM@contoso.onmicrosoft.com,Shawn,Melendez,Shawn Melendez,US,contoso:ENTERPRISEPACK
+```
+Secondly, run the command below to create the user accounts. The temporary passwords will be logged to the Output file.
+```
+Import-Csv -Path "C:\FolderName\InputFile.csv" | foreach {New-MsolUser -DisplayName $_.DisplayName -FirstName $_.FirstName -LastName $_.LastName -UserPrincipalName $_.UserPrincipalName -UsageLocation $_.UsageLocation -LicenseAssignment $_.AccountSkuId -LicenseOptions $LO} | Export-Csv -Path "C:\FolderName\OutputFile.csv"
+ ```
 ### Remove a user from Azure Active Directory
 -Force removes a user without confirmation
 ```
