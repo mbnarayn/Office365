@@ -99,6 +99,15 @@ Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -Force
 ```
 Remove-MsolUser -UserPrincipalName JoeBloggs@domainname.co.uk -RemoveFromRecycleBin -Force
 ```
-
+# Exchange Online Administration via PowerShell
+### Connect to Exchange Online PowerShell via a Coporate Proxy
+If you're behind a proxy server, run this command first: $ProxyOptions = New-PSSessionOption -ProxyAccessType <Value>, where the ProxyAccessType value is IEConfig, WinHttpConfig, or AutoDetect.
+```
+$ProxyOptions = New-PSSessionOption -ProxyAccessType IEConfig
+```
+Then, add the following parameter and value to the end of the $Session = ... command: -SessionOption $ProxyOptions.
+```
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection -SessionOption $ProxyOptions
+```
 
 
