@@ -122,4 +122,7 @@ New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias 
 ```
  Add-DistributionGroupMember -Identity "london" -Member johndoe@domain.co.uk
 ```
+### Replace all members in an existing distribution group
+```
+Update-DistributionGroupMember -Identity "help" -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
 
