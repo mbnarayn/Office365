@@ -29,7 +29,12 @@ Install-Module -Name AzureAD
 Install-Module MSOnline
 ```
 # User Administration via PowerShell
-#### Gets users from Azure Active Directory.
+#### Initiate a connection to Azure Active Directory
+This command attempts to initiate a connection with Azure Active Directory. Since no credential is provided, the cmdlet prompts you to enter your username and password.
+```
+Connect-MsolService
+```
+#### Gets users from Azure Active Directory
 ```
 Get-MsolUser
 ```
