@@ -34,7 +34,8 @@ Install-Module MSOnline
 Get-MsolUser
 ```
 #### Get all the SKUs and AccountSkuIds that the company owns
-```Get-MsolAccountSku
+```
+Get-MsolAccountSku
 ```
 #### View details about the Office 365 services that are available in all of your license plans
 ```
