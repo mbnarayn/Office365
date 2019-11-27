@@ -40,7 +40,7 @@ Get-MsolUser
 ```
 ### Displays all of the properties for the user from Azure Active Directory and displays in a list format
 ```
-Get-MsolUser -UserPrincipalName user@domainname.com | Format-List -Property *
+Get-MsolUser -UserPrincipalName user@domain.com | Format-List -Property *
 ```
 ### Get all the SKUs and AccountSkuIds that the company owns
 ```
