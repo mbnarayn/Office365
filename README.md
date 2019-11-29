@@ -142,4 +142,7 @@ Get-DistributionGroupMember -Identity aliasname
 Set-DistributionGroup -Identity aliasname -RequireSenderAuthenticationEnabled $false
 ```
 ### Check if a distribution group is allowed to receive email from external sender, true indicates not allowed.
+```
 Get-DistributionGroup -Identity aliasname | Format-List RequireSenderAuthenticationEnabled
+```
+
