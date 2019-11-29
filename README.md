@@ -137,3 +137,9 @@ Remove-DistributionGroupMember -Identity "aliasname" -member joebloggs@domain.co
 ```
 Get-DistributionGroupMember -Identity aliasname
 ```
+### Allow distribution group to receive email from external senders
+```
+Set-DistributionGroup -Identity aliasname -RequireSenderAuthenticationEnabled $false
+```
+### Check if a distribution group is allowed to receive email from external sender, true indicates not allowed.
+Get-DistributionGroup -Identity aliasname | Format-List RequireSenderAuthenticationEnabled
