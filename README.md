@@ -114,6 +114,9 @@ Then, add the following parameter and value to the end of the $Session = ... com
 ```
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection -SessionOption $ProxyOptions
 ```
+```
+Import-PSSession $Session -DisableNameChecking
+```
 ### Create a new distribution group with members
 ```
 New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias london -PrimarySmtpAddress london@domain.co.uk -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
