@@ -104,6 +104,30 @@ This cmdlet also changes the primary email address and adds the old UPN as an al
 ```
 Set-MsolUserPrincipalName -UserPrincipalName currentname@domain.co.uk -NewUserPrincipalName newname@domain.co.uk
 ```
+### Create a new user account without assigning a license
+```
+New-MsolUser -UserPrincipalName joebloggs@domain.co.uk -DisplayName "Joe Bloggs" -FirstName "Joe" -LastName "Bloggs"
+```
+### Create a new user account without license
+```
+New-MsolUser -UserPrincipalName joebloggs@domain.co.uk -DisplayName "Joe Bloggs" -FirstName "Joe" -LastName "Bloggs"
+```
+### Reset password and force password change at next logon
+```
+Set-MsolUserPassword -UserPrincipalName joebloggs@domain.co.uk -NewPassword "SecurePassword" 
+```
+### Reset password and without forcing password change at next logon
+```
+Set-MsolUserPassword -UserPrincipalName joebloggs@domain.co.uk -NewPassword "SecurePassword" -ForceChangePassword $false
+```
+### Add Exchange Administrator role to a user
+```
+Add-MsolRoleMember -RoleName "Exchange Service Administrator" –RoleMemberEmailAddress joebloggs@domain.co.uk
+```
+### Add User Administrator role to a user
+```
+Add-MsolRoleMember -RoleName "User Account Administrator" –RoleMemberEmailAddress joebloggs@domain.co.uk
+```
 # Administration of Exchange Online via PowerShell
 ### Connect to Exchange Online PowerShell via a Corporate Proxy
 If you're behind a proxy server, run this command first: $ProxyOptions = New-PSSessionOption -ProxyAccessType <Value>, where the ProxyAccessType value is IEConfig, WinHttpConfig, or AutoDetect.
