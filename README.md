@@ -112,7 +112,7 @@ New-MsolUser -UserPrincipalName joebloggs@domain.co.uk -DisplayName "Joe Bloggs"
 ```
 Set-MsolUserPassword -UserPrincipalName joebloggs@domain.co.uk -NewPassword "SecurePassword" 
 ```
-### Reset password and without forcing password change at next logon
+### Reset password without forcing password change at next logon
 ```
 Set-MsolUserPassword -UserPrincipalName joebloggs@domain.co.uk -NewPassword "SecurePassword" -ForceChangePassword $false
 ```
