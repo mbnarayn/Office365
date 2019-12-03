@@ -108,10 +108,6 @@ Set-MsolUserPrincipalName -UserPrincipalName currentname@domain.co.uk -NewUserPr
 ```
 New-MsolUser -UserPrincipalName joebloggs@domain.co.uk -DisplayName "Joe Bloggs" -FirstName "Joe" -LastName "Bloggs"
 ```
-### Create a new user account without license
-```
-New-MsolUser -UserPrincipalName joebloggs@domain.co.uk -DisplayName "Joe Bloggs" -FirstName "Joe" -LastName "Bloggs"
-```
 ### Reset password and force password change at next logon
 ```
 Set-MsolUserPassword -UserPrincipalName joebloggs@domain.co.uk -NewPassword "SecurePassword" 
