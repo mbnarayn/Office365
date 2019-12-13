@@ -169,13 +169,25 @@ Get-DistributionGroup -Identity aliasname | Format-List RequireSenderAuthenticat
 ```
 Get-Mailbox
 ```
-### View Mailbox permissions
+### View the mailbox permissions for a user
 ```
 Get-MailboxPermission -Identity joe.bloggs@domain.com
 ```
 ### View Mailbox permissions for all users
 ```
 Get-Mailbox | Get-MailboxPermission
+```
+### Full access rights to all Exchange Online Mailboxes
+```
+Get-Mailbox -ResultSize unlimited -Filter {RecipientTypeDetails -eq 'UserMailbox'} | Add-MailboxPermission -User admin@domain.onmicrosoft.com -AccessRights FullAccess -InheritanceType All
+```
+### Get Mailbox Size, Name and Item Count
+```
+Get-Mailbox -Identity joe.bloggs@domainname.com | Get-MailboxStatistics | Format-Table DisplayName, TotalItemSize, ItemCount -Autosize
+```
+### Add full access mailbox permission for a different user and disable automapping on Outlook
+```
+Add-MailboxPermission -Identity "joe.blogg@domainname.com" -User "usertobeassignedwithfullrights@domainname.com" -AccessRights FullAccess -InheritanceType All -AutoMapping $false 
 ```
 
 
