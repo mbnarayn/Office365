@@ -165,4 +165,18 @@ Set-DistributionGroup -Identity aliasname -RequireSenderAuthenticationEnabled $f
 ```
 Get-DistributionGroup -Identity aliasname | Format-List RequireSenderAuthenticationEnabled
 ```
+### Get a list of all Exchange Online mailboxes
+```
+Get-Mailbox
+```
+### View Mailbox permissions
+```
+Get-MailboxPermission -Identity joe.bloggs@domain.com
+```
+### View Mailbox permissions for all users
+```
+Get-Mailbox | Get-MailboxPermission
+```
+
+
 
