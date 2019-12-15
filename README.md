@@ -189,6 +189,16 @@ Get-Mailbox -Identity joe.bloggs@domainname.com | Get-MailboxStatistics | Format
 ```
 Add-MailboxPermission -Identity "joe.blogg@domainname.com" -User "usertobeassignedwithfullrights@domainname.com" -AccessRights FullAccess -InheritanceType All -AutoMapping $false 
 ```
+### Create a Shared Mailbox
+```
+New-Mailbox -Shared -Name MailboxName -PrimarySmtpAddress sharemailbox@domain.com
+```
+### Add permissions to a Shared Mailbox
+```
+Add-MailboxPermission -Identity MailboxName -User usertobegivenpermision@domain.com -AccessRights FullAccess
+```
+
+
 
 
 
