@@ -137,6 +137,15 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 ```
 Import-PSSession $Session -DisableNameChecking
 ```
+## Install Exchange Online PowerShell V2 (EXO V2) module
+
+`Install-Module -Name ExchangeOnlineManagement`
+`Import-Module ExchangeOnlineManagement`
+
+## Connect to Exchange Online PowerShell in a Microsoft 365 or Microsoft 365 GCC organization
+
+Connect-ExchangeOnline -UserPrincipalName user@contoso.com
+
 ### Create a new distribution group with members
 ```
 New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias london -PrimarySmtpAddress london@domain.co.uk -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
