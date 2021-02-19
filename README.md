@@ -124,6 +124,7 @@ Add-MsolRoleMember -RoleName "Exchange Service Administrator" –RoleMemberEmail
 ```
 Add-MsolRoleMember -RoleName "User Account Administrator" –RoleMemberEmailAddress joebloggs@domain.co.uk
 ```
+***
 # Administration of Exchange Online via PowerShell
 
 ## Install Exchange Online PowerShell V2 (EXO V2) module
