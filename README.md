@@ -138,9 +138,9 @@ Add-MsolRoleMember -RoleName "User Account Administrator" –RoleMemberEmailAddr
 `Connect-ExchangeOnline -UserPrincipalName user@contoso.com`
 
 ### Create a new distribution group with members
-```
-New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias london -PrimarySmtpAddress london@domain.co.uk -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk
-```
+
+`New-DistributionGroup -Name "London Office" -DisplayName "London Office" -Alias london -PrimarySmtpAddress london@domain.co.uk -Members joebloggs@domain.co.uk, redbloggs@domain.co.uk, frankdoe@domain.co.uk`
+
 ### Add a single member to an existing distribution group
 ```
  Add-DistributionGroupMember -Identity "aliasname" -Member johndoe@domain.co.uk
