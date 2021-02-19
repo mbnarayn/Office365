@@ -125,26 +125,16 @@ Add-MsolRoleMember -RoleName "Exchange Service Administrator" –RoleMemberEmail
 Add-MsolRoleMember -RoleName "User Account Administrator" –RoleMemberEmailAddress joebloggs@domain.co.uk
 ```
 # Administration of Exchange Online via PowerShell
-### Connect to Exchange Online PowerShell via a Corporate Proxy
-If you're behind a proxy server, run this command first: $ProxyOptions = New-PSSessionOption -ProxyAccessType <Value>, where the ProxyAccessType value is IEConfig, WinHttpConfig, or AutoDetect.
-```
-$ProxyOptions = New-PSSessionOption -ProxyAccessType IEConfig
-```
-Then, add the following parameter and value to the end of the $Session = ... command: -SessionOption $ProxyOptions.
-```
-$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection -SessionOption $ProxyOptions
-```
-```
-Import-PSSession $Session -DisableNameChecking
-```
+
 ## Install Exchange Online PowerShell V2 (EXO V2) module
 
 `Install-Module -Name ExchangeOnlineManagement`
+
 `Import-Module ExchangeOnlineManagement`
 
 ## Connect to Exchange Online PowerShell in a Microsoft 365 or Microsoft 365 GCC organization
 
-Connect-ExchangeOnline -UserPrincipalName user@contoso.com
+`Connect-ExchangeOnline -UserPrincipalName user@contoso.com`
 
 ### Create a new distribution group with members
 ```
