@@ -143,7 +143,7 @@ https://docs.microsoft.com/en-us/powershell/exchange/exchange-online-powershell-
 
 `Connect-ExchangeOnline -UserPrincipalName user@contoso.com`
 
-The above command replaces Connect-EXOPSSession or New-PSSession
+The above command replaces older related cmdlets like Connect-EXOPSSession or New-PSSession.
 
 ### Create a new distribution group with members
 
