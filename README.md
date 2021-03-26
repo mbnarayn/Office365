@@ -129,6 +129,12 @@ Add-MsolRoleMember -RoleName "User Account Administrator" –RoleMemberEmailAddr
 
 ## Install Exchange Online PowerShell V2 (EXO V2) module
 
+The Exchange Online PowerShell V2 module (abbreviated as the EXO V2 module) uses modern authentication and works with multi-factor authentication (MFA) for connecting to all Exchange-related PowerShell environments in Microsoft 365: Exchange Online PowerShell, Security & Compliance PowerShell, and standalone Exchange Online Protection (EOP) PowerShell.
+
+The Exchange Online cmdlets in the EXO V2 module are meant to replace their older, less efficient equivalents, but the equivalent cmdlets are still available (after you connect).
+
+https://docs.microsoft.com/en-us/powershell/exchange/exchange-online-powershell-v2?view=exchange-ps
+
 `Install-Module -Name ExchangeOnlineManagement`
 
 `Import-Module ExchangeOnlineManagement`
@@ -136,6 +142,8 @@ Add-MsolRoleMember -RoleName "User Account Administrator" –RoleMemberEmailAddr
 ## Connect to Exchange Online PowerShell in a Microsoft 365 or Microsoft 365 GCC organization
 
 `Connect-ExchangeOnline -UserPrincipalName user@contoso.com`
+
+The above command replaces Connect-EXOPSSession or New-PSSession
 
 ### Create a new distribution group with members
 
